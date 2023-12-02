@@ -18,14 +18,22 @@
         background-color: blue;
         width: 101px;
         height: 103px;
-        display: inline-block;
+        float: left;
     }
     .box2 {
-        display: inline-block;
         background-color: rgb(255, 0, 0);
         height: 103px;
         width: 209px;
         margin: 0px;
+        flex: 1;
+        display: inline-flex;
+        float: left;
+    }
+    .nig {
+        margin: 3px;
+    }
+    .tree-view {
+        display: flex;
     }
 </style>
 
@@ -42,27 +50,31 @@
             </div>
             <div class="window-body">
                 <ul class="tree-view">
-                    <div class="box1"><img src="images/2022-02-28 21.14.jpeg"></div>
-                    <div class="box2">
-                        <p>
-                            <strong>name:</strong> sunny v 
-                            <br>
-                            <strong>birthday:</strong> 05/07/2005 
-                            <br>
-                            <strong>studying:</strong> Electrical Engineering
-                            <br> 
-                            <strong>favourite colour:</strong> beige 
-                            <br> 
-                            <strong>favourite song rn:</strong> <a href="https://youtu.be/BzZ8NmYUldE?si=YnlkFB0Ea7ojUemH">To Heart - fromis_9</a>
-                            <br>
-                            <strong>hobbies:</strong> electronics, computers, cameras, <br> music, reading 
-                            <br>
-                            <strong>idol:</strong> <a href="https://youtu.be/KxGRhd_iWuE?si=f93cmmNIpxuut_yn">Shuzo Matsuoka</a>
-                        </p>
-                    </div>
+                    
                 </ul>
             </div>
           </div>
     </div>
+
+    <section class="box1"><img src="images/2022-02-28 21.14.jpeg"></section>
+    <section class="box2">
+        <p class="nig">
+            <strong>name:</strong> sunny v
+            <br>
+            <strong>birthday:</strong> 05/07/2005 
+            <br>
+            <strong>studying:</strong> Electrical Engineering
+            <br> 
+            <strong>favourite colour:</strong> beige 
+            <br> 
+            <strong>favourite song rn:</strong> <a href="https://youtu.be/BzZ8NmYUldE?si=YnlkFB0Ea7ojUemH">To Heart - fromis_9</a>
+            <br>
+            hobbies: electronics, computers, cameras, <br> music, reading
+        </p>
+    </section>
+
+
+
+
 </body>
 </html>
