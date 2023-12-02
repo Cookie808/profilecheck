@@ -5,13 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profiletest</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        
+        var pfp = document.querySelector('.pfp');
+        var offsetX, offsetY, isDragging = false;
+    
+        function handleMouseDown(e) {
+          isDragging = true;
+    
+          offsetX = e.clientX - pfp.getBoundingClientRect().left;
+          offsetY = e.clientY - pfp.getBoundingClientRect().top;
+    
+          document.addEventListener('mousemove', handleMouseMove);
+          document.addEventListener('mouseup', handleMouseUp);
+        }
+    
+        function handleMouseMove(e) {
+          if (isDragging) {
+            var x = e.clientX - offsetX;
+            var y = e.clientY - offsetY;
+    
+            pfp.style.left = x + 'px';
+            pfp.style.top = y + 'px';
+          }
+        }
+    
+        function handleMouseUp() {
+          isDragging = false;
+    
+          document.removeEventListener('mousemove', handleMouseMove);
+          document.removeEventListener('mouseup', handleMouseUp);
+        }
+    
+        pfp.querySelector('.title-bar').addEventListener('mousedown', handleMouseDown);
+      });
+    </script>
 </head>
 
 <style>
     body {
         background-color: rgb(44, 44, 44);
     }
-
+    .pfp {
+        cursor: move;
+    }
     .box1 {
         background-color: blue;
         width: 101px;
@@ -25,6 +63,8 @@
         width: 209px;
     }
 </style>
+
+
 
 <body>
     <div class="pfp">
@@ -41,7 +81,7 @@
                 <ul class="tree-view">
                     <div class="box1"><img src="images/2022-02-28 21.14.jpeg" alt=""></div>
                     <div class="box2">
-                        <p style="position: relative; left: 10px; bottom: 11px">
+                        <p style="position: initial">
                             <strong>name:</strong> sunny v 
                             <br>
                             <strong>birthday:</strong> 05/07/2005 
